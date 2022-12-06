@@ -4,13 +4,14 @@
 #include <SDL.h>
 
 class Object;
+class Scene;
 
 class Renderer
 {
 public:
 	Renderer() = default;
 
-	void Render(Canvas& canvas, Object* object);
+	void Render(Canvas& canvas, Scene& scene);
 
 	bool Initialize();
 	void Shutdown();

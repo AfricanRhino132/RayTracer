@@ -1,5 +1,6 @@
 #include "Renderer/Renderer.h"
 #include "Objects/Sphere.h"
+#include "Objects/Scene.h"
 #include <iostream>
 
 int main(int, char**)
@@ -9,8 +10,11 @@ int main(int, char**)
 	renderer.CreateWindow(600, 300);
 
 	Canvas canvas(600, 300, renderer);
+	Scene scene;
 
-	auto sphere = std::make_unique<Sphere>(glm::vec3{ 0, 0, 1 }, 0.5f, nullptr);
+	scene.AddObject(std::make_unique<Sphere>(glm::vec3{ -0.75f, 0.0f, -1.0f }, 0.5f, std::make_unique<Lambertian>(color3{ 0, 1, 0 })));
+	scene.AddObject(std::make_unique<Sphere>(glm::vec3{ 0.75f, 0.0f, -1.0f }, 0.5f, std::make_unique<Lambertian>(color3{ 0, 0, 1 })));
+	scene.AddObject(std::make_unique<Sphere>(glm::vec3{ 0.0f, -100.5f, -1.0f }, 100.0f, std::make_unique<Lambertian>(color3{ 0.2f })));
 
 	bool quit = false;
 	while (!quit)
@@ -34,7 +38,7 @@ int main(int, char**)
 
 		// render scene
 		canvas.Clear({ 0, 0, 0, 1});
-		renderer.Render(canvas, sphere.get());
+		renderer.Render(canvas, scene);
 		canvas.Update();
 
 		renderer.CopyCanvas(canvas);
