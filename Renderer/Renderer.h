@@ -5,13 +5,14 @@
 
 class Object;
 class Scene;
+class Camera;
 
 class Renderer
 {
 public:
 	Renderer() = default;
 
-	void Render(Canvas& canvas, Scene& scene);
+	void Render(Canvas& canvas, Scene& scene, Camera& camera);
 
 	bool Initialize();
 	void Shutdown();
