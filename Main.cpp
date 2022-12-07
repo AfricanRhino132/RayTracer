@@ -40,7 +40,7 @@ int main(int, char**)
 
 		// render scene
 		canvas.Clear({ 0, 0, 0, 1});
-		renderer.Render(canvas, scene, camera);
+		renderer.Render(canvas, scene, camera, 100);
 		canvas.Update();
 
 		renderer.CopyCanvas(canvas);
