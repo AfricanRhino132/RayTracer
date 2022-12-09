@@ -45,6 +45,9 @@
     <ClCompile Include="Renderer\Camera.cpp">
       <Filter>Renderer</Filter>
     </ClCompile>
+    <ClCompile Include="Objects\Plane.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Renderer\Renderer.h">
@@ -76,6 +79,9 @@
     </ClInclude>
     <ClInclude Include="Renderer\Camera.h">
       <Filter>Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Objects\Plane.h">
+      <Filter>Objects</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
